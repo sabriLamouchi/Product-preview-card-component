@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Product preview card component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+
+  <!-- font links -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@700&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+
+
+
+  <style>
+    *{
+      box-sizing: border-box;
+    }
+    body{
+      background-color: var(--Cream);
+    }
+
+
+    :root{
+      /* Primary */
+      --Dark-cyan: hsl(158, 36%, 37%);
+      --Cream: hsl(30, 38%, 92%);
+      /* Naural */
+      --Very-dark-blue: hsl(212, 21%, 14%);
+      --Dark-grayish-blue: hsl(228, 12%, 48%);
+      --White: hsl(0, 0%, 100%);
+    }
+    .flex-box{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .card{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      width: 500px;
+      background-color:var(--White);
+      border-radius:10px 0 0 10px;
+      height: 45vh;
+    }
+    .card .section_one{
+      background-image: url(images/image-product-desktop.jpg);
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 50%;
+      height: 45vh;
+      border-radius:10px 0 0 10px;
+    }
+    .card .section_two{
+      width: 50%;
+      flex-direction: column;
+      justify-content: none;
+      align-items: none;
+      position: relative;
+      height: 100%;
+      gap: 1.5vh;
+    }
+    .card .section_two span:nth-child(1){
+      align-self: flex-start;
+
+      font-family: Montserrat;
+      letter-spacing: 5px;
+      font-size: 14px;
+      opacity: 50%;
+    }
+    .card .section_two span:nth-child(2){
+      font-size: 30px;
+      font-family: Fraunces;
+      word-wrap: wrap;
+      align-self: start;
+      line-height: 1;
+    }
+    .card .section_two p{
+      font-family: Montserrat;
+      font-size: 14px;
+      opacity: 50%;
+    }
+    .card .section_two span a:first-child{
+      color: var(--Dark-cyan);
+      font-size: 30px;
+      margin-right: 10px;
+      font-family: Fraunces;
+    }
+    .card .section_two span:last-of-type{
+      display: flex;
+      align-self: start;
+      align-items: center;
+    }
+    .card .section_two span:last-of-type a:last-child{
+      font-family:Montserrat;
+      font-size: 14px;
+      opacity: 50%;
+      text-decoration: line-through;
+    }
+    .section_two span,p{
+      margin:0 20px;
+    }
+    button{
+      border: 0;
+      width: 80%;
+      height: 10%;
+      background-color: var(--Dark-cyan);
+      color: var(--White);
+      font-family: Montserrat;
+      text-align: center;
+      border-radius:10px;
+      cursor: pointer;
+    }
+    button:hover{
+      background-color: var(--Very-dark-blue);
+    }
+
+    @media (max-width:768px){
+      .card .section_one{
+        background: url("images/image-product-mobile.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 100%;
+        border-radius: 10px 10px 0 0 ;
+        height: 70%;
+      }
+      .card{
+        flex-direction: column;
+        height: 100%;
+        width:90%;
+        border-radius: 10px;
+      }
+      .card .section_two{
+        width: 100%;
+        gap: 5vh;
+        align-content: center;
+        
+      }
+    }
+  </style>
+
+
+</head>
+<body>
+<div class="card flex-box" >
+  <div class="section_one"></div> 
+
+  <div class="section_two flex-box">
+
+    <span landMark="Product_type">Parfum</span>
+
+    <span landMark="Product_title">
+      Gabrielle Essence Eau De Parfum
+    </span>
+   
+    <p landMark="Product_description">
+      A floral, solar and voluptuous interpretation composed by Olivier Polge, 
+      Perfumer-Creator for the House of CHANEL.
+    </p>
+
+    <span landMark="Product_Price ">
+      <a>$149.99</a>
+      <a>$169.99</a>
+    </span>
+
+    <button landMark="Product_button">
+      <img src="images/icon-cart.svg" alt="">
+      Add to Cart
+    </button>
+
+  </div>
+</div>
+
+</body>
+</html>
